@@ -169,7 +169,7 @@ class AbstractGraph(ABC):
                     using default token size (8192)""")
                 self.model_token = 8192
         else:
-            self.model_token = llm_params["model_tokens"]
+            self.model_token = llm_params.pop("model_tokens")
 
         try:
             if llm_params["model_provider"] not in \
